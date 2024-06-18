@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE resource-adaptor-jar PUBLIC "-//Sun Microsystems, Inc.//DTD JAIN SLEE Resource Adaptor 1.1//EN" "http://java.sun.com/dtd/slee-resource-adaptor-jar_1_1.dtd">
+
+<resource-adaptor-jar>
+	<resource-adaptor id="xmpp_2.0_RA">
+		<description>MAP Resource Adaptor 2.0</description>
+		<resource-adaptor-name>
+			MAPResourceAdaptor
+		</resource-adaptor-name>
+		<resource-adaptor-vendor>org.restcomm</resource-adaptor-vendor>
+		<resource-adaptor-version>2.0</resource-adaptor-version>
+
+		<resource-adaptor-type-ref>
+			<resource-adaptor-type-name>
+				MAPResourceAdaptorType
+			</resource-adaptor-type-name>
+			<resource-adaptor-type-vendor>
+				org.restcomm
+			</resource-adaptor-type-vendor>
+			<resource-adaptor-type-version>
+				2.0
+			</resource-adaptor-type-version>
+		</resource-adaptor-type-ref>
+
+		<library-ref>
+			<library-name>lb-lib</library-name>
+			<library-vendor>lb-lib</library-vendor>
+			<library-version>2.0</library-version>
+		</library-ref>
+
+		<resource-adaptor-classes>
+			<resource-adaptor-class>
+				<resource-adaptor-class-name>
+					org.restcomm.slee.resource.map.MAPResourceAdaptor
+				</resource-adaptor-class-name>
+			</resource-adaptor-class>
+
+			<resource-adaptor-usage-parameters-interface>
+				<description>
+					RestComm Statistics
+				</description>
+				<resource-adaptor-usage-parameters-interface-name>
+					org.restcomm.slee.resource.map.MAPResourceAdaptorStatisticsUsageParameters
+				</resource-adaptor-usage-parameters-interface-name>
+				<usage-parameter name="messages" notifications-enabled="False"/>
+			</resource-adaptor-usage-parameters-interface>
+		</resource-adaptor-classes>
+		<config-property>
+			<config-property-name>mapJndi</config-property-name>
+			<config-property-type>java.lang.String</config-property-type>
+		</config-property>
+		<config-property>
+			<description>Controls how many times dialog can timeout. '-1' -
+				indicates that dialog will never be released after timeout, othen
+				non negative values indicates how many timeouts may occur before
+				dialog is released.</description>
+			<config-property-name>timeout</config-property-name>
+			<config-property-type>java.lang.Integer</config-property-type>
+			<config-property-value>0</config-property-value>
+		</config-property>
+
+		<config-property>
+            <config-property-name>org.mobicents.resources.restcomm-slee-ra-map-ra.POINTCODE</config-property-name>
+            <config-property-type>java.lang.Integer</config-property-type>
+            <config-property-value>-1</config-property-value>
+        </config-property>
+        <config-property>
+            <config-property-name>org.mobicents.resources.restcomm-slee-ra-map-ra.SCTP_PORT</config-property-name>
+            <config-property-type>java.lang.Integer</config-property-type>
+            <config-property-value>-1</config-property-value>
+        </config-property>
+        <config-property>
+            <config-property-name>org.mobicents.resources.restcomm-slee-ra-map-ra.SCTP_LB_PORT</config-property-name>
+            <config-property-type>java.lang.Integer</config-property-type>
+            <config-property-value>-1</config-property-value>
+        </config-property>
+		<config-property>
+            <config-property-name>org.mobicents.resources.restcomm-slee-ra-map-ra.LOCAL_ADDRESS</config-property-name>
+            <config-property-type>java.lang.String</config-property-type>
+            <config-property-value></config-property-value>
+        </config-property>
+        <config-property>
+            <config-property-name>org.mobicents.resources.restcomm-slee-ra-map-ra.BALANCERS</config-property-name>
+            <config-property-type>java.lang.String</config-property-type>
+            <config-property-value></config-property-value>
+        </config-property>
+        <config-property>
+            <config-property-name>org.mobicents.resources.restcomm-slee-ra-map-ra.LoadBalancerHeartBeatingServiceClassName</config-property-name>
+            <config-property-type>java.lang.String</config-property-type>
+            <config-property-value>org.restcomm.slee.resource.ss7.heartbeat.SS7LoadBalancerHeartBeatingServiceImpl</config-property-value>
+        </config-property>
+        <config-property>
+            <config-property-name>org.mobicents.resources.restcomm-slee-ra-map-ra.HEARTBEAT_INTERVAL</config-property-name>
+            <config-property-type>java.lang.Integer</config-property-type>
+            <config-property-value>5000</config-property-value>
+        </config-property>
+	</resource-adaptor>
+</resource-adaptor-jar>
